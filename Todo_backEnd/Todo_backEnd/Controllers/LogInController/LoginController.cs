@@ -36,11 +36,11 @@ namespace Todo_backEnd.Controllers.LogInController
             return _user;*/
 
             SqlConnection connection = new SqlConnection(_config.GetConnectionString("CrudConnection"));
-            LogInResponse authenticatedUser = _user.GetUserByEmail(connection, user.userEmail);
+            LogInResponse rs = _user.GetUserByEmail(connection, user.userEmail);
 
-            if (authenticatedUser != null && user.userPassword == authenticatedUser.Users.userPassword)
+            if (rs.Users != null && user.userPassword == rs.Users.userPassword)
             {
-                return authenticatedUser.Users;
+                return rs.Users;
             }
 
             return null;
@@ -57,6 +57,7 @@ namespace Todo_backEnd.Controllers.LogInController
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
+
         [AllowAnonymous]
         [HttpPost]
 
@@ -67,7 +68,11 @@ namespace Todo_backEnd.Controllers.LogInController
             if (user_ != null)
             {
                 var token = GenerateToken(user_);
-                response = Ok(new { token = token });
+                response = Ok(new { token = token, message = "valid credentials" });
+            }
+            else
+            {
+                response = BadRequest(new { message = "Try Again... Invalid user or Invalid password" });
             }
             return response;
         }

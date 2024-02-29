@@ -274,3 +274,4 @@ D:\Todo29.2.2024\Todo_backEnd\Todo_backEnd\obj\Debug\net8.0\Todo_backEnd.pdb
 D:\Todo29.2.2024\Todo_backEnd\Todo_backEnd\obj\Debug\net8.0\Todo_backEnd.genruntimeconfig.cache
 D:\Todo29.2.2024\Todo_backEnd\Todo_backEnd\obj\Debug\net8.0\ref\Todo_backEnd.dll
 D:\Todo29.2.2024\Todo_backEnd\Todo_backEnd\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Todo29.2.2024\Todo_backEnd\Todo_backEnd\obj\Debug\net8.0\Todo_backEnd.sourcelink.json

@@ -37,7 +37,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-
+builder.Services.AddScoped<IAddUserRegistration, AddUserRegistration>();
+builder.Services.AddScoped<IAddUserRegistrationServ, AddUserRegistrationServ>();
 
 builder.Services.AddScoped<IGetUserByEmail, GetUserByEmail>();
 builder.Services.AddScoped<IGetUserByEmailServ, GetUserByEmailServ>();
